@@ -58,7 +58,9 @@ ul{list-style:none}
   display:flex;align-items:center;gap:9px;
   color:var(--text);font-weight:800;font-size:16px;
   text-decoration:none;flex-shrink:0;letter-spacing:-.3px;
+  transition:opacity var(--ease);
 }
+.header-logo:hover{opacity:.85}
 .header-logo-icon{flex-shrink:0}
 .header-logo-text{letter-spacing:-.02em}
 .header-logo-accent{color:var(--primary)}
@@ -201,7 +203,8 @@ section{padding:52px 0;scroll-margin-top:66px}
   margin-bottom:16px;
   box-shadow:0 4px 14px rgba(217,119,6,.3);
 }
-.editorial h3{font-size:22px;font-weight:900;margin-bottom:10px;letter-spacing:-.5px}
+.editorial-section{padding:32px 0 0}
+.editorial .editorial-title{font-size:22px;font-weight:900;margin-bottom:10px;letter-spacing:-.5px}
 .editorial-benefit{font-size:14px;color:var(--text-secondary);margin-bottom:14px;line-height:1.65}
 .editorial-why{
   font-size:14px;color:#78350f;
@@ -367,8 +370,8 @@ section{padding:52px 0;scroll-margin-top:66px}
 .card-logo.logo-ps{background:linear-gradient(135deg,#0891b2,#2563eb)}
 .card-logo.logo-ws{background:linear-gradient(135deg,#4f46e5,#7c3aed)}
 .card-logo.logo-pv{background:linear-gradient(135deg,#7c3aed,#db2777)}
-.card-logo.logo-nv{background:linear-gradient(135deg,#1e40af,#2563eb)}
-.card-logo.logo-ev{background:linear-gradient(135deg,#b91c1c,#dc2626)}
+.card-logo.logo-hd{background:linear-gradient(135deg,#0ea5e9,#22d3ee)}
+.card-logo.logo-cf{background:linear-gradient(135deg,#f97316,#facc15)}
 
 .card-title-area{flex:1;min-width:0}
 .card-rank-badge{
@@ -376,10 +379,10 @@ section{padding:52px 0;scroll-margin-top:66px}
   border-radius:6px;padding:3px 9px;
   font-size:11px;font-weight:700;margin-bottom:5px;letter-spacing:.2px;
 }
-.rank-gold{background:#fef3c7;color:#92400e}
-.rank-silver{background:#f1f5f9;color:#475569}
-.rank-bronze{background:#fef0e0;color:#7c2d12}
-.rank-default{background:#f1f5f9;color:#475569}
+.rank-gold{background:linear-gradient(135deg,#fef3c7,#fde68a);color:#78350f;border:1px solid rgba(217,119,6,.25)}
+.rank-silver{background:linear-gradient(135deg,#f1f5f9,#e2e8f0);color:#334155;border:1px solid rgba(100,116,139,.2)}
+.rank-bronze{background:linear-gradient(135deg,#fef0e0,#fed7aa);color:#7c2d12;border:1px solid rgba(180,83,9,.25)}
+.rank-default{background:#f1f5f9;color:#475569;border:1px solid var(--border)}
 .card-name{font-size:17px;font-weight:800;line-height:1.2;letter-spacing:-.3px}
 .card-tags-row{display:flex;flex-wrap:wrap;gap:4px;margin-top:7px}
 .card-tag{
@@ -479,8 +482,9 @@ section{padding:52px 0;scroll-margin-top:66px}
 .methodology .section-desc{font-size:14px;color:var(--text-muted);margin-bottom:26px;line-height:1.7}
 .method-grid{display:grid;grid-template-columns:1fr;gap:20px}
 @media(min-width:640px){.method-grid{grid-template-columns:1fr 1fr}}
-.method-block h4{font-size:14px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;letter-spacing:-.2px}
-.method-block h4 span{background:var(--primary);color:#fff;border-radius:6px;padding:2px 9px;font-size:12px}
+.method-block h3{font-size:14px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;letter-spacing:-.2px}
+.method-block h3 span{background:var(--primary);color:#fff;border-radius:6px;padding:2px 9px;font-size:12px}
+.criteria-list-title{font-size:14px;font-weight:700;margin-bottom:4px;letter-spacing:-.2px}
 .method-block ul li{
   font-size:13px;color:var(--text-secondary);
   padding-left:18px;position:relative;margin-bottom:7px;line-height:1.55;
@@ -513,9 +517,9 @@ section{padding:52px 0;scroll-margin-top:66px}
 .criteria-text strong{color:var(--text)}
 
 .fit-lists{display:grid;grid-template-columns:1fr 1fr;gap:16px;grid-column:1/-1}
-.fit-col h4{font-size:13px;font-weight:700;margin-bottom:10px}
-.fit-yes h4{color:#059669}
-.fit-no h4{color:#dc2626}
+.fit-col h3{font-size:13px;font-weight:700;margin-bottom:10px}
+.fit-yes h3{color:#059669}
+.fit-no h3{color:#dc2626}
 .fit-col ul li{font-size:13px;color:var(--text-secondary);padding-left:18px;position:relative;margin-bottom:5px}
 .fit-yes li::before{content:"✓";position:absolute;left:0;color:#059669;font-weight:700}
 .fit-no li::before{content:"✗";position:absolute;left:0;color:#dc2626;font-weight:700}
@@ -554,7 +558,7 @@ tr:hover td{background:#f8fafb}
   background:var(--primary);color:#fff;
   font-size:14px;font-weight:800;margin-bottom:12px;
 }
-.install-card h4{font-size:15px;font-weight:700;margin-bottom:9px;letter-spacing:-.2px}
+.install-card h3{font-size:15px;font-weight:700;margin-bottom:9px;letter-spacing:-.2px}
 .install-card p{font-size:13px;color:var(--text-secondary);margin-bottom:10px;line-height:1.65}
 .install-tags{display:flex;flex-wrap:wrap;gap:6px}
 .install-tag{background:#f8fafc;border:1px solid var(--border);border-radius:6px;padding:3px 9px;font-size:11px;color:var(--text-muted);font-weight:500}
@@ -563,7 +567,7 @@ tr:hover td{background:#f8fafb}
   border:1.5px solid #bbf7d0;border-radius:var(--radius);
   padding:22px;margin-top:18px;
 }
-.install-warn h4{font-size:16px;font-weight:800;margin-bottom:12px;color:#065f46;letter-spacing:-.3px}
+.install-warn h3{font-size:16px;font-weight:800;margin-bottom:12px;color:#065f46;letter-spacing:-.3px}
 .install-warn ul li{font-size:13px;color:#374151;padding-left:22px;position:relative;margin-bottom:8px;line-height:1.6}
 .install-warn ul li::before{content:"✓";position:absolute;left:0;color:#059669;font-weight:700}
 
@@ -574,7 +578,7 @@ tr:hover td{background:#f8fafb}
   background:var(--card);border-radius:var(--radius);
   padding:22px;box-shadow:var(--shadow);margin-bottom:14px;border:1px solid var(--border);
 }
-.expert-card h4{font-size:17px;font-weight:800;margin-bottom:14px;letter-spacing:-.3px}
+.expert-card h3{font-size:17px;font-weight:800;margin-bottom:14px;letter-spacing:-.3px}
 .expert-card ul li{font-size:13px;color:var(--text-secondary);padding-left:20px;position:relative;margin-bottom:7px;line-height:1.6}
 .expert-card ul li::before{content:"⚠";position:absolute;left:0;font-size:11px;color:#dc2626}
 .expert-card p{font-size:13px;color:var(--text-secondary);line-height:1.75}
@@ -584,9 +588,9 @@ tr:hover td{background:#f8fafb}
 .etag-warning{background:#fef3c7;color:#92400e}
 .etag-ok{background:#dcfce7;color:#166534}
 .flags-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px}
-.flags-col h5{font-size:13px;font-weight:700;margin-bottom:10px}
-.flags-green h5{color:#059669}
-.flags-red h5{color:#dc2626}
+.flags-col h4{font-size:13px;font-weight:700;margin-bottom:10px}
+.flags-green h4{color:#059669}
+.flags-red h4{color:#dc2626}
 .flags-col ul li{font-size:13px;color:var(--text-secondary);padding-left:20px;position:relative;margin-bottom:6px}
 .flags-green li::before{content:"✓";position:absolute;left:0;color:#059669;font-weight:700}
 .flags-red li::before{content:"✗";position:absolute;left:0;color:#dc2626;font-weight:700}
@@ -654,9 +658,198 @@ tr:hover td{background:#f8fafb}
 /* ── Footer ── */
 footer{background:#0a1628;color:rgba(255,255,255,.42);padding:32px 0;text-align:center;font-size:13px;line-height:1.75}
 footer a{color:rgba(255,255,255,.65)}
+.footer-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-bottom:18px}
+.footer-tags span{
+  font-size:11px;font-weight:500;color:rgba(255,255,255,.55);
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
+  border-radius:50px;padding:4px 10px;letter-spacing:.1px;
+}
 
 /* ── Shared ── */
 .section-title{font-size:clamp(20px,4vw,26px);font-weight:900;margin-bottom:8px;letter-spacing:-.6px}
 .section-desc{font-size:15px;color:var(--text-muted);margin-bottom:28px}
 .mt-24{margin-top:28px}
 .rest-label{margin:28px 0 14px}
+
+/* ── Hero CTA buttons ── */
+.hero-cta{
+  display:flex;flex-wrap:wrap;gap:10px;
+  margin:6px 0 24px;
+}
+.hero-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 22px;border-radius:50px;
+  font-size:14px;font-weight:700;letter-spacing:-.1px;
+  text-decoration:none;white-space:nowrap;
+  transition:transform var(--ease),box-shadow var(--ease),background var(--ease),color var(--ease);
+}
+.hero-btn-primary{
+  background:linear-gradient(135deg,#10b981,#059669);
+  color:#fff;
+  box-shadow:0 6px 22px rgba(16,185,129,.32);
+}
+.hero-btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 30px rgba(16,185,129,.45);
+  color:#fff;
+}
+.hero-btn-ghost{
+  background:rgba(255,255,255,.06);
+  color:rgba(255,255,255,.92);
+  border:1.5px solid rgba(255,255,255,.18);
+}
+.hero-btn-ghost:hover{
+  background:rgba(255,255,255,.12);
+  border-color:rgba(255,255,255,.28);
+  transform:translateY(-2px);
+  color:#fff;
+}
+@media(max-width:480px){.hero-btn{flex:1 1 100%;justify-content:center}}
+
+/* ── Hero stats ── */
+.hero-stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:8px;
+  margin-top:24px;
+}
+@media(max-width:540px){.hero-stats{grid-template-columns:repeat(2,1fr)}}
+.hero-stat{
+  background:rgba(16,185,129,.08);
+  border:1px solid rgba(16,185,129,.18);
+  border-radius:14px;padding:12px 10px;
+  text-align:center;
+}
+.hero-stat-num{
+  font-size:22px;font-weight:900;color:#34d399;
+  letter-spacing:-.6px;line-height:1;margin-bottom:6px;
+}
+.hero-stat-lbl{font-size:11px;color:rgba(255,255,255,.6);line-height:1.35}
+
+/* ── By-task block (Telegram / YouTube / Roblox / Wi-Fi) ── */
+.bytask-section{padding:52px 0}
+.bytask-intro{font-size:14px;color:var(--text-secondary);margin-bottom:22px;max-width:760px;line-height:1.75}
+.bytask-grid{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:760px){.bytask-grid{grid-template-columns:1fr 1fr;gap:16px}}
+.bytask-card{
+  background:var(--card);border-radius:var(--radius);padding:22px;
+  box-shadow:var(--shadow);border:1px solid var(--border);
+  position:relative;overflow:hidden;
+  transition:box-shadow var(--ease),transform var(--ease);
+}
+.bytask-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.bytask-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--primary);
+}
+.bytask-card.bytask-tg::before{background:linear-gradient(90deg,#0088cc,#5dade2)}
+.bytask-card.bytask-yt::before{background:linear-gradient(90deg,#dc2626,#f97316)}
+.bytask-card.bytask-game::before{background:linear-gradient(90deg,#7c3aed,#a855f7)}
+.bytask-card.bytask-wifi::before{background:linear-gradient(90deg,#059669,#10b981)}
+.bytask-icon{
+  font-size:28px;margin-bottom:8px;line-height:1;
+}
+.bytask-card h3{font-size:17px;font-weight:800;margin-bottom:8px;letter-spacing:-.3px}
+.bytask-card p{font-size:13px;color:var(--text-secondary);line-height:1.7;margin-bottom:12px}
+.bytask-list{margin-bottom:12px}
+.bytask-list li{
+  font-size:13px;color:var(--text-secondary);
+  padding-left:18px;position:relative;
+  margin-bottom:7px;line-height:1.55;
+}
+.bytask-list li::before{
+  content:'→';position:absolute;left:0;top:0;
+  color:var(--primary);font-weight:800;
+}
+.bytask-list strong{color:var(--text);font-weight:700}
+.bytask-tip{
+  background:linear-gradient(135deg,#fffbeb,#fefce8);
+  border:1px solid #fde68a;border-radius:var(--radius-sm);
+  padding:10px 12px;font-size:12.5px;color:#78350f;line-height:1.55;
+}
+
+/* ── Scams block: Огонь VPN / Дед VPN ── */
+.scams-section{padding:52px 0;background:var(--bg)}
+.scams-block{
+  background:linear-gradient(160deg,#0a1628 0%,#1a1c2e 100%);
+  border-radius:var(--radius);
+  padding:32px;color:#fff;
+  position:relative;overflow:hidden;
+  border:1px solid rgba(220,38,38,.25);
+  box-shadow:0 16px 48px rgba(15,23,42,.18);
+}
+.scams-block::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,#dc2626,#f59e0b,#dc2626);
+}
+.scams-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(220,38,38,.18);
+  border:1px solid rgba(220,38,38,.35);
+  color:#fca5a5;border-radius:50px;padding:5px 14px;
+  font-size:11px;font-weight:800;
+  text-transform:uppercase;letter-spacing:.8px;margin-bottom:14px;
+}
+.scams-title{color:#fff;margin-bottom:10px}
+.scams-intro{font-size:14px;color:rgba(255,255,255,.7);line-height:1.75;margin-bottom:20px;max-width:780px}
+.scams-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:18px}
+@media(min-width:760px){.scams-grid{grid-template-columns:repeat(3,1fr);gap:14px}}
+.scams-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius-sm);padding:16px;
+}
+.scams-card-h{
+  font-size:13px;font-weight:800;color:#fff;
+  margin-bottom:10px;letter-spacing:-.2px;
+  padding-bottom:9px;border-bottom:1px solid rgba(255,255,255,.08);
+}
+.scams-list li{
+  font-size:12.5px;color:rgba(255,255,255,.7);
+  padding-left:16px;position:relative;
+  margin-bottom:7px;line-height:1.55;
+}
+.scams-list li::before{
+  content:'•';position:absolute;left:4px;color:#fca5a5;font-weight:700;
+}
+.scams-list strong{color:#fff;font-weight:700}
+.scams-bottom{
+  font-size:13px;color:rgba(255,255,255,.6);line-height:1.7;
+  background:rgba(255,255,255,.04);
+  border-left:3px solid #f59e0b;
+  padding:12px 16px;border-radius:8px;
+}
+
+/* ── No-VPN block ── */
+.novpn-section{padding:52px 0}
+.novpn-intro{font-size:14px;color:var(--text-secondary);margin-bottom:22px;max-width:760px;line-height:1.75}
+.novpn-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:18px}
+@media(min-width:760px){.novpn-grid{grid-template-columns:1fr 1fr;gap:16px}}
+.novpn-col{
+  background:var(--card);border-radius:var(--radius);
+  padding:22px;border:1px solid var(--border);
+  box-shadow:var(--shadow);
+}
+.novpn-col h3{font-size:16px;font-weight:800;margin-bottom:14px;letter-spacing:-.2px}
+.novpn-yes{border-top:3px solid #059669}
+.novpn-no{border-top:3px solid #dc2626}
+.novpn-yes h3{color:#059669}
+.novpn-no h3{color:#dc2626}
+.novpn-col ul li{
+  font-size:13px;color:var(--text-secondary);
+  padding-left:20px;position:relative;
+  margin-bottom:7px;line-height:1.6;
+}
+.novpn-yes ul li::before{content:"✓";position:absolute;left:0;color:#059669;font-weight:700}
+.novpn-no ul li::before{content:"✗";position:absolute;left:0;color:#dc2626;font-weight:700}
+.novpn-col li strong{color:var(--text);font-weight:700}
+.novpn-verdict{
+  background:linear-gradient(135deg,#ecfdf5,#f0fdf4);
+  border:1.5px solid #bbf7d0;border-radius:var(--radius);
+  padding:22px;
+}
+.novpn-verdict h3{
+  font-size:16px;font-weight:800;margin-bottom:8px;
+  color:#065f46;letter-spacing:-.2px;
+}
+.novpn-verdict p{
+  font-size:14px;color:#064e3b;line-height:1.75;
+}
